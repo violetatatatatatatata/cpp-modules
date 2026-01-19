@@ -6,19 +6,17 @@
 #    By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 14:57:51 by avelandr          #+#    #+#              #
-#    Updated: 2026/01/18 18:45:26 by avelandr         ###   ########.fr        #
+#    Updated: 2026/01/19 20:11:11 by avelandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = BraiiiiiiinnnzzzZ
+NAME        = cppisforlosers
 
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 
+SRC         = main.cpp utils.cpp
 OBJ         = $(SRC:.cpp=.o)
-SRC         = Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
 
 RESET       = \033[0m
 PINK        = \033[1;35m
@@ -61,4 +59,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+tests: $(NAME)
+	c++ -Wall -Wextra -Werror main_tests.cpp utils.cpp -o tester
+	./tester
+	@rm -f tester
+
+.PHONY: all clean fclean re tests

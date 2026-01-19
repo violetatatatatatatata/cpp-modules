@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 12:17:54 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/19 12:51:43 by avelandr         ###   ########.fr       */
+/*   Created: 2026/01/19 17:51:06 by avelandr          #+#    #+#             */
+/*   Updated: 2026/01/19 18:02:13 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-/*	This function creates a zombie, names it, and returns it so you can use it
- *	outside of the function scope.
- * */
+#include "Weapon.hpp"
+#include <string>
+#include <iostream>
 
-Zombie*	newZombie(std::string name) {
-	return new Zombie(name);
-}
+class HumanA
+{
+    private:
+        std::string _name;
+        Weapon&     _weapon;
+
+    public:
+        HumanA(std::string name, Weapon& weapon);
+        ~HumanA();
+        void attack() const;
+};
+
+#endif

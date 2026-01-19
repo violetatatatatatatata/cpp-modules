@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 12:17:54 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/19 12:51:43 by avelandr         ###   ########.fr       */
+/*   Created: 2026/01/19 18:00:05 by avelandr          #+#    #+#             */
+/*   Updated: 2026/01/19 18:02:06 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-/*	This function creates a zombie, names it, and returns it so you can use it
- *	outside of the function scope.
- * */
+#include "Weapon.hpp"
+#include <string>
+#include <iostream>
 
-Zombie*	newZombie(std::string name) {
-	return new Zombie(name);
-}
+class HumanB
+{
+    private:
+        std::string _name;
+        Weapon* _weapon; 
+
+    public:
+        HumanB(std::string name);
+        ~HumanB();
+        void setWeapon(Weapon& weapon);
+        void attack() const;
+};
+
+#endif

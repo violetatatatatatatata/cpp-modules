@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 12:17:54 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/19 12:51:43 by avelandr         ###   ########.fr       */
+/*   Created: 2026/01/19 17:58:56 by avelandr          #+#    #+#             */
+/*   Updated: 2026/01/19 18:02:11 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-/*	This function creates a zombie, names it, and returns it so you can use it
- *	outside of the function scope.
- * */
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {
+}
 
-Zombie*	newZombie(std::string name) {
-	return new Zombie(name);
+HumanA::~HumanA() {
+}
+
+void HumanA::attack() const {
+    std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 19:06:46 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/19 12:51:41 by avelandr         ###   ########.fr       */
+/*   Created: 2026/01/19 19:21:37 by avelandr          #+#    #+#             */
+/*   Updated: 2026/01/19 20:12:48 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int main()
-{
-    Zombie* heapZombie = newZombie("heapZombie");
-    if (heapZombie != NULL)
-        heapZombie->announce();
-    randomChump("stackZombie");
-    delete heapZombie;
-    return 0;
-}
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <cstdlib> 
+
+std::string manualReplace(std::string subject, const std::string& search,
+        const std::string& replace);
+bool	readFile(const std::string& filename, std::string& content);
+bool	writeFile(const std::string& filename, const std::string& content);
+
+#endif

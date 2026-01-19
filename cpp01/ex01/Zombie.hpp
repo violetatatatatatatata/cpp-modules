@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 19:06:46 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/19 12:51:41 by avelandr         ###   ########.fr       */
+/*   Created: 2026/01/18 18:45:14 by avelandr          #+#    #+#             */
+/*   Updated: 2026/01/19 15:42:36 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main()
-{
-    Zombie* heapZombie = newZombie("heapZombie");
-    if (heapZombie != NULL)
-        heapZombie->announce();
-    randomChump("stackZombie");
-    delete heapZombie;
-    return 0;
-}
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+class Zombie {
+	private:
+		std::string	_name;
+	public:
+		Zombie();
+		Zombie(std::string	name);
+		~Zombie();
+		
+		void	announce(int i);
+		void	setName(std::string name);
+};
+
+Zombie* zombieHorde( int N, std::string name );
+
+#endif
