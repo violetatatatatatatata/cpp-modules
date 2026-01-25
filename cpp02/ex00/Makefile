@@ -6,7 +6,7 @@
 #    By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 14:57:51 by avelandr          #+#    #+#              #
-#    Updated: 2026/01/22 17:01:52 by avelandr         ###   ########.fr        #
+#    Updated: 2026/01/22 17:29:31 by avelandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME        = harl
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 
-SRC         = main.cpp Harl.cpp
+SRC         = main.cpp Fixed.cpp
 OBJ         = $(SRC:.cpp=.o)
 
 RESET       = \033[0m

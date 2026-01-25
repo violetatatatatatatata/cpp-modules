@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 15:19:00 by avelandr          #+#    #+#             */
-/*   Updated: 2026/01/18 17:00:32 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/01/24 13:42:06 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ class PhoneBook {
 private:
 	std::string	_truncate(std::string str);
     Contact 	_contacts[8]; 
-	void    	showTable();
-	void    	printContacts(int index);
     int     	_index; 
     int     	_totalSaved;
+	
+	void    	showTable();
+	void    	printContacts(int index);
 public:
     PhoneBook();
     ~PhoneBook();
