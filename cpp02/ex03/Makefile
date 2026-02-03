@@ -6,7 +6,7 @@
 #    By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 14:57:51 by avelandr          #+#    #+#              #
-#    Updated: 2026/02/02 11:02:06 by avelandr         ###   ########.fr        #
+#    Updated: 2026/02/02 12:09:26 by avelandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME        = fixed
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 
-SRC         = main.cpp Fixed.cpp
+SRC         =  bsp.cpp Fixed.cpp main.cpp Point.cpp
 OBJ         = $(SRC:.cpp=.o)
 
 RESET       = \033[0m

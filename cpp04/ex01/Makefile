@@ -6,16 +6,16 @@
 #    By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 14:57:51 by avelandr          #+#    #+#              #
-#    Updated: 2026/02/02 11:02:06 by avelandr         ###   ########.fr        #
+#    Updated: 2026/02/03 15:56:41 by avelandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = fixed
+NAME        = boringexercise
 
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 
-SRC         = main.cpp Fixed.cpp
+SRC         = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp 
 OBJ         = $(SRC:.cpp=.o)
 
 RESET       = \033[0m

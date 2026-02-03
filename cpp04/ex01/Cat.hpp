@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 10:54:22 by avelandr          #+#    #+#             */
-/*   Updated: 2026/02/02 11:13:42 by avelandr         ###   ########.fr       */
+/*   Created: 2026/02/03 15:25:52 by avelandr          #+#    #+#             */
+/*   Updated: 2026/02/03 16:38:16 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main( void )
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Cat : public Animal
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return (0);
-}
+	private:
+		Brain* _brain;
+
+	public:
+		Cat();
+		Cat(const Cat &src);
+		Cat &operator=(const Cat &rhs);
+		~Cat();
+
+		void makeSound() const;
+		void setIdea(int index, std::string idea);
+		std::string getIdea(int index) const;
+};
+
+#endif

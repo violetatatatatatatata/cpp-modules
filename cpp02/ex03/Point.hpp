@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 10:54:51 by avelandr          #+#    #+#             */
-/*   Updated: 2026/02/02 10:55:27 by avelandr         ###   ########.fr       */
+/*   Created: 2026/02/02 11:39:24 by avelandr          #+#    #+#             */
+/*   Updated: 2026/02/02 12:04:25 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
+# include <iostream>
+# include "Fixed.hpp"
 
-class Fixed
+class Point
 {
     public:
-    Fixed(void);
-    Fixed(const Fixed &fixp);
-    Fixed &operator=(const Fixed &fixp);
-    void	setRawBits(int const raw);
-    int		getRawBits(void) const;
-    ~Fixed(void);
+        Point( void );
+        Point( const float x, const float y );
+        Point( const Point &src );
+        ~Point( void );
+        Point &operator=( const Point &rhs );
+        Fixed getX( void ) const;
+        Fixed getY( void ) const;
+
     private:
-        int	fixedPoint;
-        static const int bits = 8;
+        Fixed const _x;
+        Fixed const _y;
 };
 
 #endif
