@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 15:23:10 by avelandr          #+#    #+#             */
-/*   Updated: 2026/02/04 12:48:03 by avelandr         ###   ########.fr       */
+/*   Created: 2026/02/04 15:54:46 by avelandr          #+#    #+#             */
+/*   Updated: 2026/02/04 15:58:45 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public AAnimal
 {
 	private:
 		Brain* _brain;
 
 	public:
-		Dog();
-		Dog(const Dog &src);
-		Dog &operator=(const Dog &rhs);
-		~Dog();
+		Cat();
+		Cat(const Cat &src);
+		Cat &operator=(const Cat &rhs);
+		~Cat();
 
 		void makeSound() const;
 		void setIdea(int index, std::string idea);

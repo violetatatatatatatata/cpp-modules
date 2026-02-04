@@ -6,7 +6,7 @@
 #    By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 14:57:51 by avelandr          #+#    #+#              #
-#    Updated: 2026/02/04 12:51:16 by avelandr         ###   ########.fr        #
+#    Updated: 2026/02/04 16:00:35 by avelandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME        = boringexercise
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 
-SRC         = Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp 
+SRC         = AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp 
 OBJ         = $(SRC:.cpp=.o)
 
 RESET       = \033[0m

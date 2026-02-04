@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:18:32 by avelandr          #+#    #+#             */
-/*   Updated: 2026/02/03 16:35:39 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:48:55 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+
+#define NUM_ANIMALS 10
 
 # define ORANGE  "\x1B[38;2;255;128;0m"
 # define ROSE    "\x1B[38;2;255;151;203m"
