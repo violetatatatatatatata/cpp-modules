@@ -6,11 +6,11 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 14:54:18 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 15:50:52 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 14:53:40 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
+/*
  * A Bureaucrat must have:
 	• A constant name.
 	• A grade that ranges from 1 (highest possible grade) to 150 (lowest possible grade).
@@ -23,45 +23,39 @@
    constructor.
  *
  * */
-
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+#include "AForm.hpp"
 # include <exception>
 # include <iostream>
 # include <string>
 
-# define ORANGE  "\x1B[38;2;255;128;0m"
-# define ROSE    "\x1B[38;2;255;151;203m"
-# define GREEN   "\x1b[32m"
-# define YELLOW  "\x1b[33m"
-# define RESTORE "\x1b[0m"
+class AForm;
 
-class Form;
-
-class Bureaucrat
-{
+class Bureaucrat {
 	private:
-		const std::string	_name;
-		int 				_grade;
-	
+		const std::string   _name;
+		int                 _grade;
+
 	public:
-		Bureaucrat(void);
+		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &obj);
-        Bureaucrat &operator=(const Bureaucrat &obj);
-        ~Bureaucrat(void);
-		
-		std::string	getName() const;
-		int			getGrade() const;
+		Bureaucrat &operator=(const Bureaucrat &obj);
+		~Bureaucrat();
 
-		void	setGrade(int value);
+		std::string getName() const;
+		int getGrade() const;
+
+		void    setGrade(int value);
 		
 		void incrementGrade();
 		void decrementGrade();
 
-		void signForm(Form &form);
-		
+		void signForm(AForm &form);
+		void executeForm(AForm const &form) const;
+
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw();
@@ -69,7 +63,7 @@ class Bureaucrat
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw();
-		};	
+		};
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);

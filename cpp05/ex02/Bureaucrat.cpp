@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:48:56 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 15:37:09 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 14:51:01 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,39 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
     return *this;
 }
 
-// sobrecarga del operador <<
+// override del operador <<
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj) {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return os;
 }
 
+void Bureaucrat::signForm(AForm &form) {
+	try {
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	} catch (std::exception &e) {
+		std::cout << this->_name << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const {
+	try {
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	} catch (std::exception &e) {
+		std::cout << this->_name << " couldn't execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
+}
+
 // getters
 std::string	Bureaucrat::getName() const {
-	return (this->_name); 
+	return (this->_name);
 }
 
 int	Bureaucrat::getGrade() const {
-	return (this->_grade); 
+	return (this->_grade);
 }
 
 // setter para modificar el valor de grade
@@ -60,19 +80,19 @@ void Bureaucrat::incrementGrade() {
     if (_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
     _grade--;
-	std::cout << ROSE << "grade incremented! -1 \ncurrent: " << _grade << RESTORE << std::endl;
+	std::cout << "grade incremented! -1 \ncurrent: " << _grade << std::endl;
 }
 
 void Bureaucrat::decrementGrade() {
     if (_grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     _grade++;
-	std::cout << ORANGE << "grade decremented! +1 \ncurrent: " << _grade << RESTORE << std::endl;
+	std::cout << "grade decremented! +1 \ncurrent: " << _grade << std::endl;
 }
 
 //  override del what
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high!";
+    return "Grade is too high!";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {

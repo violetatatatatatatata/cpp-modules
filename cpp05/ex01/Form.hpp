@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:35:06 by avelandr          #+#    #+#             */
-/*   Updated: 2026/03/25 12:31:38 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/16 11:20:25 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,35 @@ As before, write getters for all attributes and overload the insertion («) oper
 print all the form’s information.
 */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-#include "Bureaucrat.hpp"
+# include <exception>
+# include <iostream>
+# include <string>
+
+class Bureaucrat;
 
 class Form {
 	private:
 		const std::string	_name;
 		bool 				_issigned;
-		const int			_grade_exect;
 		const int			_grade_signed;
-	
+		const int			_grade_exect;
+
 	public:
-		Bureaucrat(void);								// constructor default
-		Bureaucrat(std::string name, int grade);		// constructor
-        ~Bureaucrat(void);								// destructor
-		Bureaucrat(const Bureaucrat &obj);				// nomeacuerdo
-        Bureaucrat &operator=(const Bureaucrat &obj);	// operador de copia
-		
+		Form(void);
+		Form(const std::string name, int grade_signed, int grade_exect);
+		Form(const Form &obj);
+		Form &operator=(const Form &obj);
+		~Form(void);
+
 		std::string	getName() const;
-		int			getGrade() const;
-		int			getGradeExecution() const;
+		bool		getIsSigned() const;
 		int			getGradeSigned() const;
-		bool		getStatus() const;
-		
-		void		setGradeExecution(int grade_exect) const;
-		void		setGradeSigned(int grade_signed) const;
+		int			getGradeExect() const;
+
+		void		beSigned(const Bureaucrat &bureaucrat);
 
 		class GradeTooHighException : public std::exception {
 			public:
@@ -59,9 +61,9 @@ class Form {
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw();
-		};	
+		};
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
+std::ostream& operator<<(std::ostream& os, const Form& obj);
 
 #endif

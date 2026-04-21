@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:57:35 by avelandr          #+#    #+#             */
-/*   Updated: 2026/03/24 14:33:06 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:32:08 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	main(void)
 	
 	try {
 		b.incrementGrade();
-	} catch (std::exception e) {
+	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	
 	try {
 		b.decrementGrade();
-	} catch (std::exception e) {
+	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 

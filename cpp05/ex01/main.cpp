@@ -6,39 +6,37 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:57:35 by avelandr          #+#    #+#             */
-/*   Updated: 2026/03/24 14:33:06 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:28:32 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int	main(void)
+int main(void)
 {
-	Bureaucrat b("Petrovska", 10);
-	
-	try {
-		b.incrementGrade();
-	} catch (std::exception e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
-	
-	try {
-		b.decrementGrade();
-	} catch (std::exception e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
+    try {
+        Bureaucrat b("Petrovska", 10);
+        std::cout << b << std::endl;
 
-	b.setGrade(150);
-	try {
-		b.decrementGrade();
-	} catch (std::exception &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
+        b.incrementGrade();
+        b.decrementGrade();
+    }
+    catch (std::exception &e) {
+        std::cerr << "Error! " << e.what() << std::endl;
+    }
+
+    std::cout << "----------------------" << std::endl;
+
+    try {
+        Bureaucrat limit("iborge-g", 150);
+        std::cout << limit << std::endl;
+
+        limit.decrementGrade();
 	}
-	
-	b.setGrade(-1);
-	try {
-		b.incrementGrade();
-	} catch (std::exception &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
+    catch (std::exception &e) {
+        std::cerr << "Excepción: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

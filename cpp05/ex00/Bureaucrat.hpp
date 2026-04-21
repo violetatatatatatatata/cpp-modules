@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 14:54:18 by avelandr          #+#    #+#             */
-/*   Updated: 2026/03/24 10:36:07 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:32:57 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@
 # include <exception>
 # include <iostream>
 # include <string>
+
+# define ORANGE  "\x1B[38;2;255;128;0m"
+# define ROSE    "\x1B[38;2;255;151;203m"
+# define GREEN   "\x1b[32m"
+# define YELLOW  "\x1b[33m"
+# define RESTORE "\x1b[0m"
 
 class Bureaucrat
 {

@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:48:56 by avelandr          #+#    #+#             */
-/*   Updated: 2026/03/24 14:32:15 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:28:12 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,10 @@ int	Bureaucrat::getGrade() const {
 	return (this->_grade); 
 }
 
-// setter para modificar el valor de grade
 void	Bureaucrat::setGrade(int value) {
 	this->_grade = value;
 }
 
-// implementados
 void Bureaucrat::incrementGrade() {
     if (_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
