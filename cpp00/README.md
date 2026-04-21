@@ -1,4 +1,5 @@
-![til](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWhsMnJzbTNqZjc0dmlicWM1ZnhyZmZ4bzYyeWFlYTA4ZWprZGk3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YLPOIP1jPu1N87yemm/giphy.gif)
+<img width="480" height="416" alt="image" src="https://github.com/user-attachments/assets/afea0ea1-be60-4cfb-8289-f92460af1eed" />
+
 
 ## CPP 00
 ---
