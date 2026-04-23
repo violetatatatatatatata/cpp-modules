@@ -6,19 +6,15 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:48:56 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 16:28:12 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:27:47 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-// constructor default
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
-// destructor
-Bureaucrat::~Bureaucrat() {}
-
-// constructor
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
@@ -27,7 +23,8 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
     this->_grade = grade;
 }
 
-// constructor de copia
+Bureaucrat::~Bureaucrat() {}
+
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
     if (this != &rhs) {
         this->_grade = rhs._grade;
@@ -35,7 +32,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
     return *this;
 }
 
-// override del operador <<
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj) {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return os;
@@ -66,6 +62,16 @@ void Bureaucrat::decrementGrade() {
         throw Bureaucrat::GradeTooLowException();
     _grade++;
 	std::cout << "grade decremented! +1 \ncurrent: " << _grade << std::endl;
+}
+
+void	Bureaucrat::signForm(Form &f) {
+    try {
+        f.beSigned(*this);
+        std::cout << this->_name << " signed " << f.getName() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << YELLOW << this->_name << " couldn't sign " << f.getName()
+            << " because " << e.what() << RESTORE << std::endl;
+    }
 }
 
 //  override del what

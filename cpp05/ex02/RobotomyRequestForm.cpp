@@ -6,18 +6,23 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:41:05 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/16 11:41:17 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:32:37 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include <cstdlib>
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default_target") {}
+RobotomyRequestForm::RobotomyRequestForm() :
+	AForm("RobotomyRequestForm", 72, 45),
+	_target("default_target") {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) :
+	AForm("RobotomyRequestForm", 72, 45),
+	_target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj), _target(obj._target) {}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) :
+	AForm(obj),
+	_target(obj._target) {}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs) {
 	if (this != &rhs) {

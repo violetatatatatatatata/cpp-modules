@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 11:41:29 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/22 12:32:36 by avelandr         ###   ########.fr       */
+/*   Created: 2026/04/21 17:13:17 by avelandr          #+#    #+#             */
+/*   Updated: 2026/04/21 17:14:45 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-# include "AForm.hpp"
-# include <string>
-#include <cstdlib>
+# include <iostream>
+# include <cstdlib>
+# include <limits>
+# include <iomanip>
+# include <cmath>
 
-class RobotomyRequestForm : public AForm {
+class ScalarConverter
+{
 	private:
-		std::string _target;
+		ScalarConverter(void);
+		ScalarConverter(const ScalarConverter& other);
+		ScalarConverter &operator=(const ScalarConverter &other);
+		~ScalarConverter();
 
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &obj);
-		RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
-		~RobotomyRequestForm();
-
-		void performAction() const;
+		static void	convert(const std::string& literal);
 };
 
 #endif

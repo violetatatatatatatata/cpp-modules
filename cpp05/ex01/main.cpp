@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:57:35 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 16:28:32 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:28:51 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void)
 {
     try {
-        Bureaucrat b("Petrovska", 10);
+        Bureaucrat b("Petrovska", 149);
         std::cout << b << std::endl;
 
         b.incrementGrade();

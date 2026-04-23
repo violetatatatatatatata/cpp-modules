@@ -6,17 +6,22 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:40:50 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/16 11:51:16 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:34:11 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("default_target") {}
+PresidentialPardonForm::PresidentialPardonForm() :
+	AForm("PresidentialPardonForm", 25, 5),
+	_target("default_target") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) :
+	AForm("PresidentialPardonForm", 25, 5),
+	_target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj), _target(obj._target) {}
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) :
+	AForm(obj), _target(obj._target) {}
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs) {
 	if (this != &rhs) {

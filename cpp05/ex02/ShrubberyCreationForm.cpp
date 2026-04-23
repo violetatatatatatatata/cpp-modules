@@ -6,18 +6,24 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:41:33 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 16:33:45 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:57:23 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default_target") {}
+ShrubberyCreationForm::ShrubberyCreationForm() :
+	AForm("ShrubberyCreationForm", 145, 137),
+	_target("default_target") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
+	AForm("ShrubberyCreationForm", 145, 137),
+	_target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj), _target(obj._target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) :
+	AForm(obj),
+	_target(obj._target) {}
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs) {
 	if (this != &rhs) {
@@ -30,7 +36,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::performAction() const {
-	std::string filename = this->_target + ".txt";
+	std::string filename = this->_target + "_shrubbery";
 	std::ofstream file(filename.c_str());
 
 	if (file.is_open()) {

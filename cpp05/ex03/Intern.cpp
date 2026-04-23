@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:59:30 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 15:00:57 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:53:49 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,17 @@ AForm* Intern::makeForm(std::string formName, std::string target) {
 		"robotomy request", 
 		"presidential pardon"
 	};
-	
 	AForm* (Intern::*funcs[])(std::string) const = {
 		&Intern::makeShrubbery,
 		&Intern::makeRobotomy,
 		&Intern::makePresidential
 	};
-
 	for (int i = 0; i < 3; i++) {
 		if (names[i] == formName) {
 			std::cout << "Intern creates " << formName << std::endl;
 			return (this->*funcs[i])(target);
 		}
 	}
-	
 	std::cout << "Intern could not create form: '" << formName << "' because it does not exist." << std::endl;
 	return NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: avelandr <avelandr@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:59:48 by avelandr          #+#    #+#             */
-/*   Updated: 2026/04/21 15:01:58 by avelandr         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:56:08 by avelandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,40 @@
 int	main()
 {
 	Intern someRandomIntern;
-	AForm* rrf;
-	AForm* scf;
-	AForm* ppf;
+	AForm* a;
+	AForm* b;
+	AForm* c;
 	AForm* fail;
 
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	scf = someRandomIntern.makeForm("shrubbery creation", "Garden");
-	ppf = someRandomIntern.makeForm("presidential pardon", "Fry");
-	fail = someRandomIntern.makeForm("unknown form", "Nobody");
+	a = someRandomIntern.makeForm("robotomy request", "Alex Alto");
+	b = someRandomIntern.makeForm("shrubbery creation", "Joancito Caganer");
+	c = someRandomIntern.makeForm("presidential pardon", "Alba Ranita");
+	fail = someRandomIntern.makeForm("unknown form", "Nadie");
 
-	std::cout << "\n--- BUREAUCRAT ACTIONS ---" << std::endl;
-	Bureaucrat boss("The Boss", 1);
+	Bureaucrat boss("Boss", 1);
 
-	if (rrf) {
-		boss.signForm(*rrf);
-		boss.executeForm(*rrf);
-		delete rrf;
+	std::cout << std::endl;
+	if (a) {
+		boss.signForm(*a);
+		boss.executeForm(*a);
+		delete a;
+	}
+
+	std::cout << std::endl;
+	if (b) {
+		boss.signForm(*b);
+		boss.executeForm(*b);
+		delete b;
+	}
+	std::cout << std::endl;
+	
+	if (c) {
+		boss.signForm(*c);
+		boss.executeForm(*c);
+		delete c;
 	}
 	
-	if (scf) {
-		boss.signForm(*scf);
-		boss.executeForm(*scf);
-		delete scf;
-	}
-	
-	if (ppf) {
-		boss.signForm(*ppf);
-		boss.executeForm(*ppf);
-		delete ppf;
-	}
-	
+	std::cout << std::endl;
 	if (fail) {
 		delete fail;
 	}
